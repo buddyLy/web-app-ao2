@@ -1,0 +1,13 @@
+{
+  "name": "sinon",
+  "version": "1.15.4",
+  "_release": "1.15.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.15.4",
+    "commit": "9469e69895ec934e4e145d9b8a1c5a0165692036"
+  },
+  "_source": "git://bower.wal-mart.com:6789/sinon",
+  "_target": "~1.15.3",
+  "_originalSource": "sinon"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "angular-ui-router",
+  "version": "0.2.15",
+  "main": "./release/angular-ui-router.js",
+  "dependencies": {
+    "angular": ">= 1.0.8"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "component.json",
+    "package.json",
+    "lib",
+    "config",
+    "sample",
+    "test",
+    "tests",
+    "ngdoc_assets",
+    "Gruntfile.js",
+    "files.js"
+  ],
+  "_release": "0.2.15",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.15",
+    "commit": "805e69bae319e922e4d3265b7ef565058aaff850"
+  },
+  "_source": "git://bower.wal-mart.com:6789/angular-ui-router",
+  "_target": "~0.2.14",
+  "_originalSource": "angular-ui-router"
+}

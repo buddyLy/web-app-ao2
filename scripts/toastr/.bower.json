@@ -1,0 +1,20 @@
+{
+  "name": "toastr",
+  "version": "2.1.1",
+  "main": [
+    "toastr.js",
+    "toastr.css"
+  ],
+  "dependencies": {
+    "jquery": ">=1.6.3"
+  },
+  "_release": "2.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.1.1",
+    "commit": "8ff63def898c6ac619fef2d284576e8e4941cb1a"
+  },
+  "_source": "git://bower.wal-mart.com:6789/toastr",
+  "_target": "~2.1.1",
+  "_originalSource": "toastr"
+}

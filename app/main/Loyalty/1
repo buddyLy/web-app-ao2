@@ -1,0 +1,41 @@
+﻿<div id="homeContent">
+    <div class="row">
+        <div class="col-lg-9 center">
+            <div class="pane-content">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><em class="icon icon-star"></em>&nbsp;Loyalty</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-loyalty">
+                            <label for="vm_loyalty_itemlist">Select CDT Classified Items</label> <br />
+                            <input id="vm_loyalty_itemlist" type="file" data-ng-disabled="vm.currentLoyalty.disabledCreate" accept=".csv" class="filestyle" data-buttontext="Browse" enable-create onchange="loadFile('vm_loyalty_itemlist', 'loyaltyItemFile')">
+                            <br />
+                            <input id="useStoreClustering" type="checkbox" data-ng-disabled="vm.currentLoyalty.disabledCreate" data-ng-model="vm.loyaltyRequest.useClustering; isFileChosen = false;" />
+                            <label for="vm_loyalty_storeclustering">Select Store Clustering</label> <br />
+                            <input id="vm_loyalty_storeclustering" type="file" data-ng-disabled="!vm.loyaltyRequest.useClustering" accept=".csv" class="filestyle" data-buttontext="Browse" enable-create onchange="loadFile('vm_loyalty_storeclustering', 'loyaltyStoreClusterFile')">
+                            <br />
+
+							isFileChose={{isFileChosen}}
+                            <fieldset>
+                                <label>Cluster by:</label><br />
+                                <input type="radio" data-ng-model="vm.loyaltyRequest.loyaltyLevel" value="Node" /> Node &nbsp;
+                                <input type="radio" data-ng-model="vm.loyaltyRequest.loyaltyLevel" value="Brand" /> Brand &nbsp;
+                                <input type="radio" data-ng-model="vm.loyaltyRequest.loyaltyLevel" value="Item" /> Item
+                            </fieldset>
+                            <br />
+                            <div class="btn-group">
+                                <button class="btn btn-primary" type="button" data-ng-disabled="(vm.currentLoyalty.disabledCreate || !isFileChosen)" data-ng-click="vm.createLoyalty()">Create Loyalty</button>
+								<button class="btn btn-primary" type="button" data-ng-click="vm.downloadLoyaltyTemplate()">Download Loyalty Template</button>
+							&nbsp;&nbsp;	
+                                <button class="btn btn-primary" type="button" data-ng-click="vm.downloadClusteringTemplate()">Download Store Clustering Template</button>
+                            </div>
+                            <hr>
+                            <button class="btn btn-primary" type="button" data-ng-disabled="!vm.currentLoyalty.loyaltyMetricsExist" data-ng-click="vm.downloadItemMetrics()">Download Loyalty Metrics</button>
+                           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

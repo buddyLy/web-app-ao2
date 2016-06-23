@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="AssortmentOptimization" data-ng-strict-di>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AOS</title>
+    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+    <!-- build:css content/lib.css -->
+    <!-- inject:thirdparty:css -->
+    <link rel="stylesheet" href="./scripts/bootstrap-walmart/css/bootstrap.css">
+
+    <link rel="stylesheet" href="./scripts/toastr/toastr.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+    <!-- build:css content/app.css-->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="./content/site.css">
+    <link href="./scripts/angular-ui-grid/ui-grid.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./content/spinner.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+    <!-- build:js scripts/modernizr.js-->
+    <!-- inject:modernizr:js -->
+    <script src="./scripts/modernizr/modernizr.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body>
+    <footer class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <div class="container-fluid">
+            <p class="navbar-text navbar-right">
+            </p>
+        </div>
+    </footer>
+    <!-- build:js scripts/lib.js -->
+    <!-- inject:thirdparty:js -->
+
+    <script src="./scripts/jquery/dist/jquery.js"></script>
+    <script src="./scripts/bootstrap-walmart/js/bootstrap.js"></script>
+    <script src="./scripts/angular/angular.js"></script>
+    <script src="./app/app.module.js"></script>
+    <script src="./scripts/angular-animate/angular-animate.js"></script>
+    <script src="./scripts/angular-messages/angular-messages.js"></script>
+    <script src="./scripts/angular-resource/angular-resource.js"></script>
+    <script src="./scripts/angular-route/angular-route.js"></script>
+    <script src="./scripts/angular-sanitize/angular-sanitize.js"></script>
+    <script src="./scripts/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="./scripts/extras.angular.plus/ngplus-overlay.js"></script>
+    <script src="./scripts/lodash/lodash.js"></script>
+    <script src="./scripts/moment/moment.js"></script>
+    <script src="./scripts/toastr/toastr.js"></script>
+    <script src="./scripts/angular-ui-grid/ui-grid.min.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+    <!-- build:js scripts/app.js-->
+    <!-- inject:js -->
+
+    <script src="./app/blocks/exception/exception.module.js"></script>
+    <script src="./app/blocks/Logger/logger.module.js"></script>
+    <script src="./app/blocks/Router/router.module.js"></script>
+    <script src="./app/main/main.module.js"></script>
+    <script src="./app/home/home.module.js"></script>
+    <script src="./app/layout/layout.module.js"></script>
+    <script src="./app/core/core.module.js"></script>
+    <script src="./app/directives/directives.module.js"></script>
+    <script src="./app/directives/enablecreate.directive.js"></script>
+    <script src="./app/services/services.module.js"></script>
+    <script src="./app/widgets/widgets.module.js"></script>
+
+    <script src="./app/blocks/Router/routehelper.js"></script>
+    <script src="./app/blocks/Exception/exception-handler.provider.js"></script>
+    <script src="./app/blocks/Exception/exception.js"></script>
+    <script src="./app/blocks/Logger/logger.js"></script>
+    <script src="./app/core/config.js"></script>
+    <script src="./app/core/Constants.js"></script>
+
+    <script src="./app/home/config.route.js"></script>
+    <script src="./app/main/config.route.js"></script>
+
+    <script src="./app/layout/shell.controller.js"></script>
+    <script src="./app/home/home.controller.js"></script>
+    <script src="./app/main/main.controller.js"></script>
+    <script src="./app/main/AssortmentDiagnostics/assortmentdiagnostics.controller.js"></script>
+    <script src="./app/main/CDT/cdt.controller.js"></script>
+    <script src="./app/main/Loyalty/loyalty.controller.js"></script>
+    <script src="./app/main/StoreClustering/storeclustering.controller.js"></script>
+    <script src="./app/main/Substitution/substitution.controller.js"></script>
+    <script src="./app/home/modal.controller.js"></script>
+
+    <script src="./app/services/user.service.js"></script>
+    <script src="./app/services/logger.service.js"></script>
+    <script src="./app/services/assortmentoptimization.service.js"></script>
+    <script src="./app/services/interceptor.factory.js"></script>
+
+    <script>
+        var inputFileData = {
+            "diagItemFile": "",
+            "clusteringStoresFile": "",
+            "loyaltyItemFile": "",
+            "loyaltyStoreClusterFile": "",
+            "subItemFile": ""
+        };
+
+        //Base64 Encode File
+        function arrayBufferToBase64(buffer) {
+            var binary = '';
+            var bytes = new Uint8Array(buffer);
+            var len = bytes.byteLength;
+            for (var i = 0; i < len; i++) {
+                binary += String.fromCharCode(bytes[i]);
+            }
+            return window.btoa(binary);
+        }
+
+        //Read in a file
+        function readFile(file, callback) {
+            var reader = new FileReader();
+            reader.onload = callback
+            reader.readAsArrayBuffer(file);
+        }
+
+        function loadFile(elemId, fileId) {
+            var selectedFile = document.getElementById(elemId).files[0];
+            readFile(selectedFile, function (e) {
+                inputFileData[fileId] = arrayBufferToBase64(e.target.result);
+            });
+        }
+
+    </script>
+
+	<div id="shell" class="container-fluid">
+		    <div data-ng-include="'./app/layout/shell.html'"></div>   
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿<div>
+    <div class="list-group">
+        <div ng-repeat="assortment in vm.assortments | orderBy:'lastChangeDate':true | limitTo:vm.limit">
+            <a href="#/view/{{ assortment.id }}" class="list-group-item">
+                {{ assortment.name }}
+                <span ng-if="vm.showDate" class="pull-right text-muted small">
+                    <em>{{assortment.createDate | date:'MM/dd/yyyy'}}</em>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>

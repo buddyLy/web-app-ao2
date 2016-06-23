@@ -1,0 +1,27 @@
+﻿<div id="homeContent">
+    <div class="row">
+        <div class="col-lg-9 center">
+            <div class="pane-content">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+						<h3 class="panel-title"><em class="icon icon-th"></em>&nbsp;Store Clustering</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-storeclustering">
+                            <label for="vm_clustering_stores">Select Store Clustering Sheet:</label> <br />
+                            <input id="vm_clustering_stores" type="file" accept=".csv" data-ng-disabled="vm.currentCluster.disabledCreate" class="filestyle" data-buttontext="Browse" enable-create onchange="loadFile('vm_clustering_stores', 'clusteringStoresFile')">
+                            <br />
+                            <div class="btn-group">
+                                <button class="btn btn-primary" type="button" data-ng-disabled="(vm.currentCluster.disabledCreate || !isFileChosen)" data-ng-click="vm.createStoreClustering()">Create Clustering</button>
+                                <button class="btn btn-primary" type="button" data-ng-click="vm.downloadClusteringTemplate()">Download Store Clustering Template</button>
+                            </div>
+                            <hr>
+                            <button class="btn btn-primary" data-ng-disabled="!vm.currentCluster.reclassifiedStoresExists" type="button" data-ng-click="vm.downloadReclassifiedStores()">Download Classified Stores</button>
+                            <button class="btn btn-primary" data-ng-disabled="!vm.currentCluster.modelSummaryFileExists" type="button" data-ng-click="vm.downloadModelSummary()">Download Classification/Model Summary</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

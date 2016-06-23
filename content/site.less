@@ -1,0 +1,607 @@
+﻿// Core variables and mixins
+@import "variables.less";
+
+// Core CSS
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: @wmt-common-bkg-gray !important;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+a[ng-click] {
+    cursor: pointer;
+}
+
+#mainBody {
+    /*height: 100vh;*/
+    margin-top: 65px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.navbar-branded {
+    min-height: 65px;
+}
+
+.centering {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-style {
+    border: 1px solid rgb(212,212,212);
+    min-height: 250px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.gridTotalRow {
+    height: 25px;
+    margin: 3px 3px 0 3px;
+    padding: 5px;
+    background-color: @wmt-common-text2;
+    border: 1px solid @wmt-common-black;
+    color: @wmt-common-white;
+}
+
+.gridSubtotalRow {
+    height: 15px;
+    margin: 3px 3px 0 3px;
+    padding: 5px;
+    background-color: @wmt-common-text3;
+    border: 1px solid @wmt-common-black;
+    color: @wmt-common-white;
+}
+
+.table-striped > tbody > tr:nth-child(odd) {
+    background-color: @wmt-bkg-blue;
+}
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+.user-details {
+    margin-top: 50px;
+}
+
+.gender-text {
+    margin: 0 5px;
+    vertical-align: sub;
+}
+
+.jqx-widget-content ul {
+    font-size: 13px !important;
+}
+
+.btn-even-bigger,
+.btn-group-even-bigger > .btn {
+    font-size: 25px;
+    line-height: 2;
+    padding: 18px 24px;
+    border-radius: 10px;
+}
+
+.browsehappy {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: @wmt-common-bkg-gray;
+    margin: 50px 0 10px 0;
+    padding: 5px;
+    //font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    line-height: 1.4;
+    color: @wmt-common-text-black;
+    vertical-align: middle;
+}
+
+/* ngplus overlay styles */
+.ngplus-overlay-background {
+    top: 0;
+    left: 0;
+    padding-left: 100px;
+    position: absolute;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+    background-color: #808080;
+    opacity: 0.65;
+}
+
+.ngplus-overlay-content {
+    margin: auto;
+    position: absolute;
+    font-weight: bold;
+    height: 8em;
+    width: 20em;
+    z-index: 10000;
+    text-align: center;
+}
+
+.page-spinner-message {
+    text-align: center;
+    font-size: 400%;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-shadow: 2px 2px #000000;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @wmt-yellow;
+    padding: 0;
+}
+
+.page-spinner-message.page-spinner-message-subtle {
+    margin: 30% auto 0 auto;
+    font-size: 200%;
+}
+
+.overlay-message {
+    font-size: 200%;
+}
+
+.spinner {
+    margin: 20% auto 0 auto;
+    left: auto;
+    top: auto !important;
+}
+
+/*Optional Animations*/
+.dissolve-animation.ng-hide-remove,
+.dissolve-animation.ng-hide-add {
+    display: inline !important;
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+}
+
+.dissolve-animation.ng-hide-remove.ng-hide-remove-active,
+.dissolve-animation.ng-hide-add {
+    opacity: 1;
+}
+
+.dissolve-animation.ng-hide-add.ng-hide-add-active,
+.dissolve-animation.ng-hide-remove {
+    opacity: 0;
+}
+/* end ngplus overlay styles */
+
+.repeat-animation.ng-enter,
+.repeat-animation.ng-leave,
+.repeat-animation.ng-move {
+    -webkit-transition: 0.3s linear all;
+    -moz-transition: 0.3s linear all;
+    -o-transition: 0.3s linear all;
+    transition: 0.3s linear all;
+    position: relative;
+}
+
+.repeat-animation.ng-enter {
+    left: 10px;
+    opacity: 0;
+}
+
+.repeat-animation.ng-enter.ng-enter-active {
+    left: 0;
+    opacity: 1;
+}
+
+.repeat-animation.ng-leave {
+    left: 10px;
+    opacity: 1;
+}
+
+.repeat-animation.ng-leave.ng-leave-active {
+    left: -10px;
+    opacity: 0;
+}
+
+.repeat-animation.ng-move {
+    opacity: 0.5;
+}
+
+.repeat-animation.ng-move.ng-move-active {
+    opacity: 1;
+}
+
+/* Home styles */
+#homeContent {
+    margin-top: 75px;
+}
+
+#homeCreate {
+    overflow: auto;
+    background-color: @lr-light-grey;
+}
+
+#homeRecent {
+    overflow: auto;
+    background-color: @lr-light-grey;
+}
+
+#homeSearch {
+    overflow: auto;
+    background-color: @lr-dark-grey;
+}
+/* End Home styles */
+
+.btn-secondary {
+    color: #fff;
+    border-color: #003f78;
+    background-color: #004c91;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary.active {
+    color: #fdbb30;
+}
+
+.btn-secondary:focus,
+.btn-secondary.focus,
+.open > .dropdown-toggle.btn-secondary {
+    color: #fff;
+    border-color: #001f3a;
+    background-color: #004c91;
+}
+
+.btn-secondary:active,
+.btn-secondary.active,
+.open > .dropdown-toggle.btn-secondary {
+    background-image: none;
+}
+
+.btn-secondary.disabled,
+.btn-secondary[disabled],
+fieldset[disabled] .btn-secondary,
+.btn-secondary.disabled:hover,
+.btn-secondary[disabled]:hover,
+fieldset[disabled] .btn-secondary:hover,
+.btn-secondary.disabled:focus,
+.btn-secondary[disabled]:focus,
+fieldset[disabled] .btn-secondary:focus,
+.btn-secondary.disabled.focus,
+.btn-secondary[disabled].focus,
+fieldset[disabled] .btn-secondary.focus,
+.btn-secondary.disabled:active,
+.btn-secondary[disabled]:active,
+fieldset[disabled] .btn-secondary:active,
+.btn-secondary.disabled.active,
+.btn-secondary[disabled].active,
+fieldset[disabled] .btn-secondary.active {
+    border-color: #003f78;
+    background-color: #004c91;
+}
+
+.btn-secondary .badge {
+    color: #004c91;
+    background-color: #fff;
+}
+
+.k-grid .k-grid-header .k-header {
+    white-space: normal;
+    text-align: center;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+.k-grid-header th.k-header {
+    text-align: center;
+}
+
+.k-grid td {
+    line-height: 2em;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.k-cell-centered {
+    text-align: center;
+}
+
+.k-cell-right {
+    text-align: right;
+}
+
+.k-grid {
+    font-size: 11px;
+}
+
+.k-item-info-header {
+    background-color: #B8CCE4;
+    //color: white;
+}
+
+.k-widget.k-tooltip.k-group {
+    border-color: @wmt-common-black;
+    background-color: @lr-blue;
+    color: @wmt-common-white;
+    text-align: left;
+}
+
+#shell {
+    position:relative;
+    height: 100%;
+
+    & > div, & > div > div {
+        height: 100%;
+    }
+    main {
+        margin-top: 0;
+        padding-top: 70px;
+        height: 100%;
+    }
+
+    main > div {
+        height: 100%;
+    }
+
+    .pane-content {
+        padding: 10px;
+    }
+
+    #homeSplitter {
+        height: 99%;
+    }
+
+    #homeSplitter2 {
+        height: 100%;
+    }
+
+    #gridSplitter {
+        height: 99%;
+    }
+
+    #gridSplitter2 {
+        height: 100%;
+    }
+
+    &.container-fluid {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .color-info {
+        color: @lr-blue;
+    }
+
+    .list-group-item {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    #home-left-pane {
+        box-shadow: inset 0 0 10px @lr-dark-grey;
+
+        #home-lefttop-pane {
+            overflow: auto;
+            background-color: @lr-light-grey;
+        }
+
+        #home-leftbottom-pane {
+            overflow: auto;
+            background-color: @lr-light-grey;
+        }
+    }
+
+    #home-right-pane {
+        overflow: auto;
+        background-color: @lr-dark-grey;
+        box-shadow: inset 0 0 10px @wmt-common-text3;
+
+        .pane-content {
+            padding-top: 7px;
+        }
+        table {
+            background-color: @wmt-common-white;
+        }
+
+        .col-md-12, .col-md-6 {
+            padding-left: 0;
+        }
+
+        .searchOptions {
+            margin: 10px 10px;
+        }
+    }
+
+    #NavHeader .navbar-right a {
+        color: #fff;
+    }
+
+    .initialize-container .panel-title {
+        font-size: 1.2em;
+    }
+    /*#region Splash */
+    #splash-page {
+        z-index: 99999 !important;
+    }
+
+    #splash-page .bar {
+        width: 100%;
+    }
+
+    .page-splash {
+        z-index: 99999 !important;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        opacity: .9;
+        pointer-events: auto;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: opacity 0.3s linear;
+        -moz-transition: opacity 0.3s linear;
+        -o-transition: opacity 0.3s linear;
+        transition: opacity 0.3s linear;
+    }
+
+    .page-splash-message {
+        text-align: center;
+        margin: 20% auto 0 auto;
+        font-size: 400%;
+        font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        text-shadow: 2px 2px #000000;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #F58A00;
+        padding: 0;
+    }
+
+    .page-splash-message.page-splash-message-subtle {
+        margin: 30% auto 0 auto;
+        font-size: 200%;
+    }
+
+    .flag-haschanges {
+        position: fixed !important;
+        display: inline;
+    }
+
+    .icon-fw {
+        width: 1.28571429em;
+        text-align: center;
+    }
+
+    .fa-asterisk.fa-asterisk-large {
+        font-size: 180%;
+        vertical-align: middle;
+        color: #F58A00;
+    }
+
+    .fa-asterisk.fa-asterisk-alert {
+        color: #F58A00;
+    }
+
+    .fa-asterisk-inline {
+        padding: 0 4px 0 0;
+    }
+
+    .k-chart {
+        margin: 0 auto 15px auto;
+        height: 430px;
+    }
+
+    .progress,
+    .page-progress-bar {
+        margin: 30px 10% !important;
+    }
+
+    /*#region Angular ng-include, ng-view, ng-repeat shuffle animations*/
+    .shuffle-animation.ng-enter,
+    .shuffle-animation.ng-leave {
+        position: relative;
+    }
+
+    .shuffle-animation.ng-enter {
+        -moz-transition: ease-out all 0.3s 0.4s;
+        -o-transition: ease-out all 0.3s 0.4s;
+        -webkit-transition: ease-out all 0.3s 0.4s;
+        transition: ease-out all 0.3s 0.4s;
+        left: 2em;
+        opacity: 0;
+    }
+
+    .shuffle-animation.ng-enter.ng-enter-active {
+        left: 0;
+        opacity: 1;
+    }
+
+    .shuffle-animation.ng-leave {
+        -moz-transition: 0.3s ease-out all;
+        -o-transition: 0.3s ease-out all;
+        -webkit-transition: 0.3s ease-out all;
+        transition: 0.3s ease-out all;
+        left: 0;
+        opacity: 1;
+    }
+
+    .shuffle-animation.ng-leave.ng-leave-active {
+        left: 2em;
+        opacity: 0;
+    }
+    /*#endregion*/
+    /*#region Angular ng-include, ng-view, ng-repeat fader animation */
+    .fader-animation.ng-enter,
+    .fader-animation.ng-leave,
+    .fader-animation.ng-move {
+        position: relative;
+    }
+
+    .fader-animation.ng-enter,
+    .fader-animation.ng-leave {
+        -webkit-transition: cubic-bezier(0.250, 0.460, 0.450, 0.940) all 0.5s;
+        -moz-transition: cubic-bezier(0.250, 0.460, 0.450, 0.940) all 0.5s;
+        -o-transition: cubic-bezier(0.250, 0.460, 0.450, 0.940) all 0.5s;
+        transition: cubic-bezier(0.250, 0.460, 0.450, 0.940) all 0.5s;
+        opacity: 1;
+    }
+
+    .fader-animation.ng-enter,
+    .fader-animation.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+    .fader-animation.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+    .fader-animation.ng-move {
+        opacity: 0.5;
+    }
+
+    .fader-animation.ng-move.ng-move-active {
+        opacity: 1;
+    }
+    /*#endregion*/
+}
+/*#endregion*/
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.active {
+    font-weight: bold;
+    color: @wmt-common-white;
+    background-color: @wmt-dark-green !important;
+}
+
+.waitingStatus {
+    font-weight: bold;
+    color: @wmt-common-white;
+    background-color: @wmt-orange !important;
+}
+
+.done {
+    font-weight: bold;
+    color: @wmt-common-white;
+    background-color: @wmt-dark-blue !important;
+}
+
+.error {
+    font-weight: bold;
+    color: @wmt-common-white;
+    background-color: @wmt-dark-red !important;
+}
+
+.ui-grid-row:hover {
+    background-color: @wmt-lighter-blue !important;
+}

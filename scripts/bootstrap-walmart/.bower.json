@@ -1,0 +1,13 @@
+{
+  "name": "bootstrap-walmart",
+  "_cacheHeaders": {
+    "ETag": "\"{SHA1{14e6a50d6a7455c51ea1fa07a2a9137668b1793f}}\"",
+    "Last-Modified": "Tue, 02 Dec 2014 15:42:34 GMT",
+    "Content-Length": "503540",
+    "Content-Type": "application/zip"
+  },
+  "_release": "e-tag:{SHA1{14e",
+  "_source": "http://repo.wal-mart.com/service/local/repositories/walmart/content/bootstrap-branded/bootstrap-walmart/2.2.0/bootstrap-walmart-2.2.0.zip",
+  "_target": "*",
+  "_originalSource": "http://repo.wal-mart.com/service/local/repositories/walmart/content/bootstrap-branded/bootstrap-walmart/2.2.0/bootstrap-walmart-2.2.0.zip"
+}

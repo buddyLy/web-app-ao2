@@ -1,0 +1,27 @@
+﻿<div data-ng-controller="Shell as rootVm">
+    <div id="splash-page" data-ng-show="vm.showSplash" class="dissolve-animation">
+        <div class="page-splash">
+            <div class="page-splash-message" data-ng-bind="rootVm.title">
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                    <span class="sr-only">50% Complete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="clearfix">
+        <div data-ng-include="'app/layout/topnav.html'"></div>
+    </header>
+
+    <main id="mainBody" role="main" data-ng-view class="shuffle-animation"></main>
+
+    <div ngplus-overlay
+         ngplus-overlay-delay-in="50"
+         ngplus-overlay-delay-out="700"
+         ngplus-overlay-animation="dissolve-animation">
+        <img id="spinner" src="Content/images/transparent.gif" />
+        <div class="page-spinner-message overlay-message">{{rootVm.busyMessage}}</div>
+    </div>
+</div>

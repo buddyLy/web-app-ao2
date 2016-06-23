@@ -1,0 +1,20 @@
+﻿<div id="homeContent">
+    <div class="row">
+        <div class="col-lg-9 center">
+            <div class="pane-content">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><em class="icon icon-sitemap"></em>&nbsp;Customer Decision Tree</h3>
+                    </div>
+                    <div class="panel-body">
+                        <button data-ng-disabled="vm.currentCdt.disabledCreate" class="btn btn-primary" type="button" ng-click="vm.createYulesQ()">Create Yule's Q</button>
+                        <hr>
+                        <button data-ng-disabled="!vm.currentCdt.yulesQExists" class="btn btn-primary" type="button" ng-click="vm.downloadYulesQ()">Download Yule's Q</button>
+                        <button data-ng-disabled="!vm.currentCdt.itemMetricsExists" class="btn btn-primary" type="button" ng-click="vm.downloadItemMetrics()">Download Item Metrics</button>
+                        <button data-ng-disabled="!vm.currentCdt.assortDescExists" class="btn btn-primary" type="button" ng-click="vm.downloadAssortDesc()">Download Assortment Description</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
